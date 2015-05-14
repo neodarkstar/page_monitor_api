@@ -13,7 +13,9 @@ var ItemSchema   = new Schema({
     results: String,
     selector: String,
     store: String,
-    url: String
+    url: String,
+    lastChecked: Date,
+    available: Boolean
 });
 
 module.exports = mongoose.model('Item', ItemSchema);
