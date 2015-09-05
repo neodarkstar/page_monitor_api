@@ -67,7 +67,7 @@ function buildItemsList(itemList){
       }
     );
 
-    _.forEach(items[item._id].notify, function(user){
+    _.forEach(item.notify, function(user){
         items[item._id].users.push(user);
     });
 
