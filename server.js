@@ -60,7 +60,10 @@ function buildItemsList(itemList){
         id: item.item.id,
         name: item.store,
         selector: item.selector,
-        url: item.url
+        url: item.url,
+        lastChecked: item.lastChecked,
+        lastAvailable: item.lastAvailable || null,
+        available: item.available || false
       }
     );
 
@@ -70,6 +73,8 @@ function buildItemsList(itemList){
 
   });
 
-  return items;
+  return _.map(items, function(item){
+    return item;
+  });
 
 }
