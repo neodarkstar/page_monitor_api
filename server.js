@@ -49,8 +49,7 @@ function buildItemsList(itemList){
       items[item._id] = {
         name: item.item.name,
         id: item._id,
-        stores:[],
-        users:[]
+        stores:[]
       }
     }
 
@@ -59,17 +58,12 @@ function buildItemsList(itemList){
         api: item.api,
         id: item.item.id,
         name: item.store,
-        selector: item.selector,
         url: item.url,
         lastChecked: item.lastChecked,
         lastAvailable: item.lastAvailable || null,
         available: item.available || false
       }
     );
-
-    _.forEach(item.notify, function(user){
-        items[item._id].users.push(user);
-    });
 
   });
 
