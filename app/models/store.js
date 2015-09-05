@@ -1,26 +1,33 @@
-var mongoose     = require('mongoose');
-var Schema       = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var ItemSchema   = new Schema({
-    active: Boolean,
+var StoreSchema = new Schema({
+  {
+    name: String
+    active: Boolean
+    id: String,
     api: String,
-    available: Boolean,
-    item: {
-      name: String,
-      id: String,
-      dpci: String
-    },
-    notify: [String],
+    notify : [String],
     results: String,
     selector: String,
-    store: String,
     url: String,
     lastChecked: Date,
     lastAvailable: Date,
     available: Boolean
+  }
 });
 
-module.exports = mongoose.model('Item', ItemSchema);
+
+
+// {
+//   name: 'Target',
+//   active: true,
+//   id: '207-00-5039',
+//   notify : [],
+//   results: '',
+//   selector: '',
+//   url: 'http://www.target.com/p/nintendo-lucina-amiibo-figure/-/A-17318489'
+// }
 
 // {
 // 		active: true,
